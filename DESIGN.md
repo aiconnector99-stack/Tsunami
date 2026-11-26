@@ -37,7 +37,7 @@ The genre and core mechanics (falling pieces, clearing full rows) are fine to us
 - **Game:** playfield, frosted-glass HUD (score, level, lines), hold and next pieces in "bubbles".
 - **Pause:** blurred frosted overlay with Resume, Restart, Settings.
 - **Game over:** final score, best score, "Dive again".
-- **Settings:** sound, music, vibration, reduce effects, control style.
+- **Settings:** sound, vibration, reduce effects, control style.
 
 ### Persistence
 - Best score and settings in `localStorage`. Nothing leaves the device.
@@ -70,8 +70,8 @@ The genre and core mechanics (falling pieces, clearing full rows) are fine to us
 
 ### Audio
 - Original or CC0 sound effects (e.g. freesound.org CC0, or generated tones).
-- Optional calm ambient / lo-fi loop.
-- Separate sound and music toggles.
+- Sound effects only in v1.0, synthesized in the browser (no audio files). No music.
+- One sound toggle.
 
 ## 4. Controls
 
@@ -100,9 +100,9 @@ The genre and core mechanics (falling pieces, clearing full rows) are fine to us
 - Game loop: `requestAnimationFrame` for drawing, with a fixed timestep for gravity and lock timing. Game logic kept separate from rendering and input.
 - Canvas scaled for device pixel ratio so it's sharp on phones.
 - **Capacitor** wraps it as an Android app.
-  - App ID: `com.aiconnector99.tsunami` (final before first upload; it can never change).
-  - Plugins: `@capacitor/haptics`, `@capacitor/app` (pause on background, back button), `@capacitor/status-bar`.
-  - No extra Android permissions.
+  - App ID: `com.aiconnector99.tsunami` (final; it can never change after the first upload).
+  - Plugins: `@capacitor/haptics`, `@capacitor/app` (back button). Status bar and safe areas use Capacitor's built-in SystemBars.
+  - Only extra permission: vibration (for haptics).
 - **GitHub Actions:**
   - Every push: build a debug APK as an artifact for testing.
   - Tags (e.g. `v1.0.0`): build a **signed release AAB** for Play Store upload.
@@ -132,7 +132,8 @@ The genre and core mechanics (falling pieces, clearing full rows) are fine to us
 - Online leaderboard (would require updating the privacy policy and Data safety form).
 - Stats screen (games played, total lines, best combos).
 
-## 8. Open questions
+## 8. Decisions log
 
-- Final app ID before the first Play Store upload.
-- Music: include an ambient loop in v1.0, or sound effects only?
+- App ID: `com.aiconnector99.tsunami`.
+- Audio: sound effects only for v1.0.
+- Privacy policy: [PRIVACY.md](PRIVACY.md). Host it on GitHub Pages or any public page for the store listing.

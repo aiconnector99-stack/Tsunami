@@ -1,0 +1,14 @@
+{
+  "appId": "com.aiconnector99.tsunami",
+  "appName": "Tsunami",
+  "webDir": "www",
+  "backgroundColor": "#0a1a2f",
+  "android": {
+    "backgroundColor": "#0a1a2f"
+  },
+  "plugins": {
+    "SystemBars": {
+      "style": "DARK"
+    }
+  }
+}
