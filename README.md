@@ -60,3 +60,8 @@ cd android && ./gradlew assembleDebug
 ## Privacy
 
 See [PRIVACY.md](PRIVACY.md). The game stores your best score and settings on your device only.
+
+The policy is published with GitHub Pages at
+https://aiconnector99-stack.github.io/tsunami/privacy.html (use this link in the Play Console).
+The **Publish privacy policy** workflow rebuilds it whenever `PRIVACY.md` changes on `main`.
+Pages must be switched on once: **Settings → Pages → Source: GitHub Actions**.
